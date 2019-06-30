@@ -12,7 +12,9 @@
  */
 function printArrayValues(array) {
   // YOUR CODE BELOW HERE //
-  
+  for (var i = 0; i < array.length; i++) {
+    console.log(array[i]);
+  }
   
   
   
@@ -25,6 +27,10 @@ function printArrayValues(array) {
  */
 function printArrayValuesInReverse(array) {
   // YOUR CODE BELOW HERE //
+  // for (var i = array[array.length - 1]; i > -1; i--) {
+  for (var i = array.length -1; i >= 0; i--) {
+    console.log(array[i]);
+  }
   
   
   
@@ -37,6 +43,15 @@ function printArrayValuesInReverse(array) {
  */
 function getObjectKeys(object) {
   // YOUR CODE BELOW HERE //
+  // let arr = [];
+  for (let key in object) {
+    if (object.hasOwnProperty(key)) {
+      return Object.keys(object);
+      // arr.push(object[key]);
+      // console.log(arr);
+    }
+  }
+  // return arr;
   
   
   
@@ -50,7 +65,11 @@ function getObjectKeys(object) {
  */
 function printObjectKeys(object) {
   // YOUR CODE BELOW HERE //
-  
+  for (let key in object) {
+    // if(object.hasOwnProperty(key)) {
+    console.log(key);
+    // }
+  }
   
   
   
@@ -62,8 +81,13 @@ function printObjectKeys(object) {
  */
 function getObjectValues(object) {
   // YOUR CODE BELOW HERE //
-  
-  
+  let arr = [];
+  for (let key in object) {
+    if (object.hasOwnProperty(key)) {
+    arr.push(object[key]);
+    }
+  }
+  return arr;
   
   
   // YOUR CODE ABOVE HERE //
@@ -75,7 +99,9 @@ function getObjectValues(object) {
  */
 function printObjectValues(object) {
   // YOUR CODE BELOW HERE //
-  
+  for (let key in object) {
+    console.log(object[key]);
+  }
   
   
   
@@ -87,8 +113,16 @@ function printObjectValues(object) {
  */
 function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
-  
-  
+  var size = 0;
+  for (let key in object) {
+    if (object.hasOwnProperty(key)) {
+      size ++;
+      console.log(size);
+    }
+    // return size;
+  }
+  // console.log(size);
+  return size;
   
   
   // YOUR CODE ABOVE HERE //
@@ -100,7 +134,16 @@ function getObjectLength(object) {
  */
 function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
-  
+  let arr = [];
+  for (let key in object) {
+    arr.push(key);
+  }
+  for (let key in object) {
+    arr.push(object[key]);
+  }
+  for (var i = arr.length -1; i >= 0;i--){
+    console.log(arr[i]);
+  }
   
   
   

@@ -14,7 +14,12 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
-    
+    if (Array.isArray(value)) {
+        return true;
+    }
+    else {
+        return false;
+    }
     
     
     
@@ -31,6 +36,23 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
+    // if (Array.isArray(value) || value instanceof Date || value === null) {
+    // 
+    if (Array.isArray(value)) {
+        return false;
+    }
+    if (value === null) {
+        return false;
+    }
+    if (value instanceof Date) {
+        return false;
+    }
+    if (typeof value === 'object') {
+        return true;
+    }
+  else {
+        return false;
+    }
     
     
     
@@ -46,7 +68,28 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    
+    // if (Array.isArray(value) || typeof value === 'object') {
+    //     return true;
+    // }
+    if (value instanceof Date) {
+        return false;
+    }
+    if (value === null) {
+        return false;
+    }
+    if (Array.isArray(value)) {
+        return true;
+    }
+    if (typeof value === 'object') {
+        return true;
+    }
+    else {
+        return false;
+    }
+    // if (Array.isArray(value) || typeof value === 'object') {
+    //     return true;
+    // }
+   
     
     
     
@@ -74,8 +117,36 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-    
-    
+   if (typeof value === 'number') {
+        return 'number';
+    }
+    else if (typeof value === 'string') {
+        return 'string';
+    }
+    else if (typeof value === 'undefined') {
+        return 'undefined';
+    }
+    else if (typeof value === 'boolean') {
+        return 'boolean';
+    }
+    else if (typeof value === 'symbol') {
+        return 'symbol';
+    }
+    else if (typeof value === 'function') {
+        return 'function';
+    }
+    if (value === null) {
+        return 'null';
+    } else if (value instanceof Date) {
+        return 'date';
+    } else if (Array.isArray(value)) {
+        return 'array';
+    // } else if (typeof value === 'object') {
+    //     return 'object';
+    }
+    else {
+        return typeof value;
+    }
     
     
     // YOUR CODE ABOVE HERE //

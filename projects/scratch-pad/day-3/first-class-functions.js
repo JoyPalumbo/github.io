@@ -13,7 +13,42 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
+    //if string add length property
+    // if (typeof base === 'number') {
+  return function(value) {
+      return value > base;
+  }
+//     //   if (base < value) {
+//     //       return true;
+//     //   }
+//     //   else {
+//     //       return false;
+//     //   }
+//   }
+//   if (typeof base === 'string') {
+//          return function(value) {
+//       return value > base.length;
+//   }
+//   }
+    // if (typeof base === 'number') {
+    //     if (base > value) {
+    //         return true;
+    //     }
+    //     // else {
+    //     //      return false;
+    //     // }
+    // }
+    // if (typeof base === 'string') {
+    //     if (base.length > value) {
+    //         return true;
+    //     }
+    //     // else {
+    //     //     return false;
+    //     // }
+    // }
+    // else {
+    //     return false;
+    // }
     
     
     
@@ -27,7 +62,20 @@ function createGreaterThanFilter(base) {
  */
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
+    return function(value) {
+        return value < base;
+    }
     
+        // if (value < base) {
+        //     return 
+        // }
+    // var num = 5;
+    // if (num < base) {
+    //     return true;
+    // }
+    // else {
+    //     return false;
+    // }
     
     
     
@@ -41,9 +89,15 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
+    // var string = "I am a cat";
+    return function(string) {
+        return string[0].toLowerCase() === startsWith.toLowerCase()
+    //     return true;
+    // }
+    // else {
+    //     return false;
+    // }
+    }
     
     // YOUR CODE ABOVE HERE //
 }
@@ -55,7 +109,14 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    
+    return function(string){
+        string = string.toLowerCase();
+    return string[string.length - 1] === endsWith.toLowerCase();
+    };
+    //     return true;
+    // }
+    // else { 
+    //     return false;
     
     
     
@@ -71,11 +132,17 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
+    var arr = [];
+     for (var i = 0; i < strings.length; i++) {
+         arr.push(modify(strings[i]));
+    }
+    
+return arr;
     
     
     
     
-    // YOUR CODE ABOVE HERE //
+//     // YOUR CODE ABOVE HERE //
 }
 
 /** 
@@ -89,7 +156,14 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
+     for(var i = 0; i < strings.length; i++) {
+       if(test(strings[i]) === false) {
+           return false;
+       }
+          
+       }
     
+    return true;
     
     
     
